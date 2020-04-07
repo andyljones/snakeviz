@@ -87,7 +87,7 @@ else:
                     [sys.executable, "-m", "snakeviz", filename]
                 )
             # give time for the Snakeviz page to load then shut down the server
-            time.sleep(3)
+            time.sleep(10)
             sv.terminate()
 
 
@@ -119,7 +119,7 @@ def open_snakeviz_and_display_in_notebook(filename):
             s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
             # Try a default range of five ports, then use whatever's free.
-            ports = list(range(8080, 8085)) + [0]
+            ports = list(range(8083, 8088)) + [0]
             for port in ports:
                 try:
                     s.bind(("", port))
